@@ -7,6 +7,7 @@ import warrenImg from './assets/Warren.png'
 import pepperImg from './assets/Pepper.png'
 import supabase from './services/supabase'
 import ReactMarkdown from 'react-markdown'
+import rehypeSanitize from 'rehype-sanitize'
 
 const INTRO_MESSAGES = [
   { body: 'Hey 👋 how are you?', delay: 1000 },
@@ -318,7 +319,7 @@ function App() {
           {messages.map((msg, i) => (
             <div key={i} className={msg.is_agent ? 'msg-row agent' : 'msg-row user'}>
               <div className={msg.is_agent ? 'bubble agent' : 'bubble user'}>
-                <div className="bubble-body"><ReactMarkdown>{msg.message_body}</ReactMarkdown></div>
+                <div className="bubble-body"><ReactMarkdown rehypePlugins={[rehypeSanitize]}>{msg.message_body}</ReactMarkdown></div>
                 <p className="bubble-time">{formatTime(msg.timestamp)}</p>
               </div>
             </div>
