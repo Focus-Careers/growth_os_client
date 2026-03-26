@@ -355,13 +355,13 @@ body {
   padding-bottom: 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
   flex: 1;
 }
 
 .msg-animate {
   animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
-  padding: 6px 0;
+  padding: 3px 0;
   position: relative;
 }
 
@@ -432,21 +432,22 @@ body {
   font-family: 'DM Mono', monospace;
 }
 
-/* -- Options (inside bubble) -- */
+/* -- Options (right-aligned, outside bubble) -- */
 
-.options-inline {
+.options-row {
   display: flex;
   gap: 8px;
-  margin-top: 14px;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 6px 0;
 }
 
 .option-pill-new {
   padding: 8px 18px;
   border-radius: 100px;
   border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
   font-size: 13px;
   cursor: pointer;
   font-family: 'Source Serif 4', serif;
@@ -457,7 +458,7 @@ body {
 
 .option-pill-new:hover {
   border-color: var(--accent);
-  background: #fff;
+  background: var(--fg);
 }
 
 /* -- Typing indicator -- */

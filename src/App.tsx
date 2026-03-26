@@ -329,32 +329,36 @@ function App({ onBack }: AppProps) {
               msg.is_agent && (i === 0 || !messages[i - 1]?.is_agent)
 
             return (
-              <div key={i} className="msg-animate">
-                <div className={`msg-col ${msg.is_agent ? 'msg-col-left' : 'msg-col-right'}`}>
-                  {isFirstAgentInRun && (
-                    <div className="agent-label">WATSON</div>
-                  )}
-                  <div className={`bubble-new ${msg.is_agent ? 'bubble-agent' : 'bubble-user'}`}>
-                    <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
-                      {msg.message_body}
-                    </ReactMarkdown>
-                    {/* Inline options for this message */}
-                    {msg.options && !usedOptionIndices.has(i) && (
-                      <div className="options-inline">
-                        {msg.options.map((opt) => (
-                          <button
-                            key={opt}
-                            className="option-pill-new"
-                            onClick={() => handleOptionSelect(opt, i)}
-                          >
-                            {opt}
-                          </button>
-                        ))}
-                      </div>
+              <div key={i}>
+                <div className="msg-animate">
+                  <div className={`msg-col ${msg.is_agent ? 'msg-col-left' : 'msg-col-right'}`}>
+                    {isFirstAgentInRun && (
+                      <div className="agent-label">WATSON</div>
                     )}
+                    <div className={`bubble-new ${msg.is_agent ? 'bubble-agent' : 'bubble-user'}`}>
+                      <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
+                        {msg.message_body}
+                      </ReactMarkdown>
+                    </div>
+                    <div className="msg-timestamp">{getTimestamp(i)}</div>
                   </div>
-                  <div className="msg-timestamp">{getTimestamp(i)}</div>
                 </div>
+                {/* Options — right-aligned, outside the bubble */}
+                {msg.options && !usedOptionIndices.has(i) && (
+                  <div className="msg-animate">
+                    <div className="options-row">
+                      {msg.options.map((opt) => (
+                        <button
+                          key={opt}
+                          className="option-pill-new"
+                          onClick={() => handleOptionSelect(opt, i)}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )
           })}
@@ -362,20 +366,16 @@ function App({ onBack }: AppProps) {
           {/* Legacy options support — for options set via setOptions() (mobilisation flow etc.) */}
           {options && (
             <div className="msg-animate">
-              <div className="msg-col msg-col-left">
-                <div className="bubble-new bubble-agent">
-                  <div className="options-inline">
-                    {options.map(opt => (
-                      <button
-                        key={opt}
-                        className="option-pill-new"
-                        onClick={() => handleOptionSelect(opt)}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+              <div className="options-row">
+                {options.map(opt => (
+                  <button
+                    key={opt}
+                    className="option-pill-new"
+                    onClick={() => handleOptionSelect(opt)}
+                  >
+                    {opt}
+                  </button>
+                ))}
               </div>
             </div>
           )}
