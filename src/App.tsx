@@ -301,9 +301,6 @@ function App({ onBack }: AppProps) {
 
   return (
     <div className="entry-container">
-      {/* Margin line */}
-      <div className="margin-line" />
-
       {/* Top bar */}
       <div className="entry-topbar">
         <div className="topbar-left">
@@ -321,6 +318,8 @@ function App({ onBack }: AppProps) {
 
       {/* Scrollable content */}
       <div className="entry-scroll-area">
+        {/* Margin line — inside the centred container */}
+        <div className="margin-line" />
         <EntryHeader />
 
         {/* Messages */}
