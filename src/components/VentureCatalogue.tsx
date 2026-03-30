@@ -20,7 +20,7 @@ const PRODUCTS = [
     name: 'growthOS',
     accent: '#c44e2b',
     description:
-      'Your AI-powered marketing department. Lead generation, outreach campaigns, and pipeline management — 42 specialists, one conversation.',
+      'Your AI-powered marketing department. Lead generation, outreach campaigns, and pipeline management — 5 specialists, one conversation.',
     icon: 'growth' as const,
     ready: true,
   },
@@ -31,7 +31,8 @@ const PRODUCTS = [
     description:
       'AI-driven due diligence, automated. Risk assessment, document analysis, and compliance checks — thorough, fast, and always audit-ready.',
     icon: 'deal' as const,
-    ready: true,
+    ready: false,
+    comingSoon: true,
   },
   {
     id: 'credit',

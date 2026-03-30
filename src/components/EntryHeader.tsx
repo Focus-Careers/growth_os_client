@@ -1,7 +1,8 @@
 const TEAM_MEMBERS = [
-  { name: 'Lead Gen Expert', initial: 'L' },
-  { name: 'Campaign Manager', initial: 'C' },
-  { name: 'Administrator', initial: 'A' },
+  { name: 'Belfort', role: 'Lead Gen Expert', initial: 'B' },
+  { name: 'Draper', role: 'Campaign Manager', initial: 'D' },
+  { name: 'Warren', role: 'Business Analyst', initial: 'W' },
+  { name: 'Pepper', role: 'Administrator', initial: 'P' },
 ]
 
 export default function EntryHeader() {
@@ -10,7 +11,7 @@ export default function EntryHeader() {
       <div className="entry-headline">
         Introducing your AI marketing department.
         <br />
-        <span className="entry-headline-italic">42 employees</span>
+        <span className="entry-headline-italic">5 employees</span>
         <span className="entry-headline-muted">, ready to work.</span>
       </div>
 
@@ -28,6 +29,7 @@ export default function EntryHeader() {
             <span className="badge-pill">
               <span className="badge-initial">{member.initial}</span>
               <span className="badge-name">{member.name}</span>
+              <span className="badge-role">{member.role}</span>
             </span>
             {i < arr.length - 2 && <span>,</span>}
           </span>

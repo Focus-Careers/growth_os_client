@@ -8,7 +8,7 @@ import EntryHeader from './components/EntryHeader'
 const INTRO_MESSAGES = [
   { body: 'Hey 👋 how are you?', delay: 1000 },
   { body: "I'm Watson - Chief Marketing Officer of GrowthOS - an AI-powered plug & play marketing department built by Venture Labs.", delay: 1800 },
-  { body: 'At my disposal I have a team of 42 AI employees, ready to fuel growth at your organisation.', delay: 1800 },
+  { body: 'At my disposal I have a team of 5 AI employees with over 30 skills between them, ready to fuel growth at your organisation.', delay: 1800 },
   { body: 'PS: For lots of companies, GrowthOS already *is* the marketing department - but of course the team are also happy to work alongside your existing marketing department to do your time-consuming administrative tasks and fill any skill gaps that you might have.', delay: 2800 },
   { body: 'Want to get started or hear more?', delay: 1000, options: ["Let's get started", "I want to hear more"] },
 ]
@@ -20,10 +20,10 @@ const MORE_QUESTIONS_MESSAGES = [
 
 const HEAR_MORE_MESSAGES = [
   { body: "Sure. Here's how it works.", delay: 1000 },
-  { body: "Each of our AI employees has a bunch of skills. Let's use an example - our Lead Generation Expert.", delay: 1800 },
-  { body: "One of the skills they have under their belt is the ability to go out and trawl the web for potential customers, working tirelessly (without breaks!) to build a massive database. It's one of those classic administrative tasks that it's definitely worth having an AI do instead of paying a human!", delay: 3000 },
-  { body: "That's just one example - altogether we have 42 employees, with 1,027 skills between them!", delay: 2000 },
-  { body: "Importantly, they can work together too. So, once the Lead Generation Expert has done his thing, we can ask the Campaign Manager to build an email campaign and reach out to them. Clever, hey?", delay: 2800 },
+  { body: "Each of our AI employees has a bunch of skills. Let's use an example — Belfort, our Lead Generation Expert.", delay: 1800 },
+  { body: "One of his skills is the ability to go out and trawl the web for potential customers, working tirelessly (without breaks!) to build a massive database. It's one of those classic administrative tasks that it's definitely worth having an AI do instead of paying a human!", delay: 3000 },
+  { body: "That's just one example — altogether the team has over 30 skills between them.", delay: 2000 },
+  { body: "Importantly, they can work together too. So, once Belfort has done his thing, we can ask Draper, the Campaign Manager, to build an email campaign and reach out to them. Clever, hey?", delay: 2800 },
   { body: "Got more questions, or want to try it out?", delay: 1000, options: ["I still have more questions", "I'll try it out!"] },
 ]
 
